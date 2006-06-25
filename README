@@ -1,0 +1,8 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1584
+
+Erlang plugin package.
+
+Includes indenting, syntax highlighting, folding, partial omni completion.
+
+There is a repository at:
+http://github.com/oscarh/vimerl
