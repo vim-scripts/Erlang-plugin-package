@@ -38,7 +38,9 @@ let s:doneFunctionDefinitions=1
 " Run Erlang make instead of GNU Make
 function s:SetErlangOptions()
 	compiler erlang
-	setlocal omnifunc=erlangcomplete#Complete
+	if version >= 700
+		setlocal omnifunc=erlangcomplete#Complete
+	endif
 
 	" {{{2 Settings for folding
 	if (!exists("g:erlangFold")) || g:erlangFold
@@ -48,6 +50,7 @@ function s:SetErlangOptions()
 		"setlocal fml=2
 	endif
 endfunction
+
 
 " Define folding functions {{{1
 if !exists("*GetErlangFold")
@@ -188,5 +191,11 @@ if !exists("*GetErlangFold")
 endif " }}}
 
 call s:SetErlangOptions()
+
+" Skeletons {{{1
+function GenServer()
+	echo foo 
+endfunction
+" }}}
 
 " vim: set foldmethod=marker:
